@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Ink & Paper design system (same tokens as Trackr AI) */
+@theme {
+  --color-cobalt: #2F54EB;
+  --color-cobalt-dark: #1D3BC4;
+  --color-cobalt-soft: #E8EDFE;
+  --color-gold: #FFC93D;
+  --color-gold-soft: #FFF4D6;
+  --color-ink: #1B1F2A;
+  --color-ink-soft: #5B6272;
+  --color-paper: #FAF8F3;
+  --color-card: #FFFFFF;
+  --color-line: #E7E3D8;
+  --color-good: #1F9D55;
+  --color-good-soft: #E3F5EA;
+  --color-bad: #D64545;
+  --color-bad-soft: #FBE7E7;
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+h1, h2, h3 { @apply font-display; }
+
+/* Reusable pieces (usable in templates like any Tailwind class) */
+@utility card { @apply bg-card border border-line rounded-2xl p-5; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed; }
+@utility btn-primary { @apply btn bg-cobalt text-white hover:bg-cobalt-dark; }
+@utility btn-ghost { @apply btn border border-line bg-card hover:border-cobalt hover:text-cobalt; }
+@utility btn-gold { @apply btn bg-gold text-ink hover:brightness-95; }
+@utility input { @apply w-full rounded-xl border border-line bg-card px-3 py-2 text-sm outline-none focus:border-cobalt focus:ring-2 focus:ring-cobalt-soft; }
+@utility label { @apply block text-xs font-semibold uppercase tracking-wide text-ink-soft mb-1; }
+@utility chip { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium; }
+@utility muted { @apply text-ink-soft text-sm; }
+@utility error-box { @apply rounded-xl bg-bad-soft text-bad px-4 py-3 text-sm; }
+
+/* Lesson and chat markdown */
+.prose-lesson { @apply text-[15px] leading-7; }
+.prose-lesson h2 { @apply text-xl font-bold mt-8 mb-3 text-ink; }
+.prose-lesson h3 { @apply text-lg font-semibold mt-6 mb-2; }
+.prose-lesson p { @apply my-3; }
+.prose-lesson ul { @apply list-disc pl-6 my-3; }
+.prose-lesson ol { @apply list-decimal pl-6 my-3; }
+.prose-lesson li { @apply my-1; }
+.prose-lesson strong { @apply font-semibold; }
+.prose-lesson a { @apply text-cobalt underline; }
+.prose-lesson code { @apply font-mono text-[13px] bg-cobalt-soft text-cobalt-dark rounded px-1 py-0.5; }
+.prose-lesson pre { @apply bg-ink text-paper rounded-xl p-4 my-4 overflow-x-auto; }
+.prose-lesson pre code { @apply bg-transparent text-paper p-0; }
+.prose-lesson blockquote { @apply border-l-4 border-gold pl-4 italic text-ink-soft; }
+.prose-lesson table { @apply w-full text-sm my-4 border-collapse; }
+.prose-lesson th, .prose-lesson td { @apply border border-line px-3 py-2 text-left; }
+.prose-lesson > :first-child { @apply mt-0; }

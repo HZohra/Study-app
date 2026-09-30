@@ -1,0 +1,20 @@
+{
+  "name": "trackr-study-server",
+  "version": "1.0.0",
+  "description": "Backend for Trackr Study: courses, lectures, AI lessons, quizzes and chat",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "db:init": "node src/init-db.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.129.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "multer": "^2.0.0",
+    "pg": "^8.23.1"
+  }
+}
